@@ -1,0 +1,17 @@
+*{
+    border: none !important;
+ 
+    box-sizing: border-box !important;
+}
+html{
+    min-height: 100vh !important;
+}
+body{
+    min-height: 100vh !important;
+}
+#root{
+    height: 100vh !important;
+}
+section{
+    height: 100%;
+}
