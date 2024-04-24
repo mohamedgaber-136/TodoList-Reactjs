@@ -40,7 +40,8 @@ export default function EditBtn({item,ind}) {
   }
   const onSubmit = (values) => {
       const newData=data.splice(ind,1,values)
-    setData([...newData])
+    
+    setData([...data])
     localStorage.setItem('data', JSON.stringify([...data]))
     handleClose()
   }
