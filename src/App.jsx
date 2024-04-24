@@ -28,7 +28,7 @@ switch(dataState){
     <NavBar/>
     <div className="cards  flex-wrap container d-flex align-items-center justify-content-center gap-2">
       {
-        data.length? subData.map((item,ind)=><div key={ind}><SimpleCard   item={item}/></div> ) :''
+        data.length? subData.map((item,ind)=><div key={ind}><SimpleCard ind={ind}  item={item}/></div> ) :''
       }
      
     </div>

@@ -6,7 +6,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useContext, useState } from 'react';
 import { TodoDoContext } from '../context/TodoData';
-export default function SimpleCard({item}) {
+import EditBtn from './EditBtn';
+export default function SimpleCard({item,ind}) {
   const {setData,data}=useContext(TodoDoContext)
   const bull = (
     <Box
@@ -27,16 +28,16 @@ setData([...deletedData])
 localStorage.setItem('data', JSON.stringify([...deletedData]))
 
   }
-  console.log(item)
   return (
-    <Card sx={{minWidth:275,maxWidth:275,minHeight:175,overflowX:'scroll'}}  className='d-flex flex-column justify-content-between' style={{backgroundColor:`${item.color}`}}>
+    <Card sx={{minWidth:275,maxWidth:275,minHeight:175,}}  className='d-flex flex-column justify-content-between' style={{backgroundColor:`${item.color}`}}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className='text-center shadow-sm text-dark  border rounded'>
-         {item.title}
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className='text-center d-flex px-2 align-items-center justify-content-between shadow-sm text-dark  border rounded'>
+         <span>{item.title}</span>
+         <EditBtn item={item} ind={ind}/>
+
         </Typography>
         <Typography variant="body2" className='d-flex gap-2  my-2'>
-        
-
+          
           <b>description:</b>
           <span >{item.description}</span>
         
